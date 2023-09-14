@@ -113,6 +113,22 @@ int main() {
     messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
     scoreText.setPosition(20, 20);
 
+    // Time bar
+    RectangleShape timebar;
+    float timeBarStartWidth = 400;
+    float timeBarHeight = 80;
+    timebar.setSize(
+        Vector2f(timeBarStartWidth, timeBarHeight)
+    );
+    timebar.setFillColor(Color::Red);
+    timebar.setPosition(
+        (1920 / 2) - timeBarStartWidth / 2, 980
+    );
+    Time gameTimeTotal;
+    float timeRemaining = 6.0f;
+    float timeBarWidthPerSecond = timeBarStartWidth / timeRemaining;
+
+
     while (window.isOpen()) {
 
         /*************** Handle the player's input ***************/
@@ -128,6 +144,10 @@ int main() {
 
             paused = false;
 
+            // Reset the time and score
+            timeRemaining = 6;
+            score = 0;
+
         }
 
         /*************** Update the scene ***************/
@@ -136,6 +156,34 @@ int main() {
 
             // Measure time
             Time dt = clock.restart();
+
+            // Subtract from the amount of time remaining
+            timeRemaining -= dt.asSeconds();
+            
+            // Size up the time bar
+            timebar.setSize(
+                Vector2f(timeBarWidthPerSecond * timeRemaining, timeBarHeight)
+            );
+
+            if (timeRemaining <= 0.0f) {
+
+                // Pause the game
+                paused = true;
+
+                // Change the player message
+                messageText.setString("Out of Time!");
+
+                // Reposition text based on new size
+                FloatRect textRect = messageText.getLocalBounds();
+                messageText.setOrigin(
+                    textRect.left +
+                    textRect.width / 2.0f,
+                    textRect.top +
+                    textRect.height / 2.0f
+                );
+                messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
+
+            }
 
             // Setup the bee
             if (!beeActive) {
@@ -284,6 +332,9 @@ int main() {
         window.draw(spriteCloud3);
         window.draw(spriteTree);
         window.draw(spriteBee);
+
+        // Draw timebar
+        window.draw(timebar);
 
         // Draw score
         window.draw(scoreText);
