@@ -22,6 +22,11 @@
 // Make code easier to type with "using namespace"
 using namespace sf;
 
+// Forward Declaration (function prototype)
+/* void drawScene(
+    RenderWindow&,
+    Sprite&); */
+
 //This is where our game starts from
 int main() {
 
@@ -321,7 +326,7 @@ int main() {
         } // End if(!paused)
 
         /*************** Draw the scene ***************/
-        
+
         // Clear everything from the last frame
         window.clear();
 
@@ -349,8 +354,44 @@ int main() {
         // Show everything we just drew
         window.display();
 
+        // drawScene();
+
     }
     
     return 0;
 
 }
+
+/*************** Draw the scene ***************/
+/* void drawScene(
+    RenderWindow& window,
+    Sprite& spriteBee) {
+
+    // Clear everything from the last frame
+    window.clear();
+
+    // Draw our game scene here
+    window.draw(spriteBackground);
+    window.draw(spriteCloud1);
+    window.draw(spriteCloud2);
+    window.draw(spriteCloud3);
+    window.draw(spriteTree);
+    window.draw(spriteBee);
+
+    // Draw timebar
+    window.draw(timebar);
+
+    // Draw score
+    window.draw(scoreText);
+
+    if (paused) {
+
+        // Draw message
+        window.draw(messageText);
+
+    }
+
+    // Show everything we just drew
+    window.display();
+
+} */
