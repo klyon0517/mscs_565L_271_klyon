@@ -18,6 +18,7 @@
 // Include important libraries here
 #include <sstream>
 #include <SFML/Graphics.hpp>
+// #include "drawScene.h"
 
 // Make code easier to type with "using namespace"
 using namespace sf;
@@ -326,7 +327,7 @@ int main() {
         } // End if(!paused)
 
         /*************** Draw the scene ***************/
-
+        
         // Clear everything from the last frame
         window.clear();
 
@@ -354,7 +355,18 @@ int main() {
         // Show everything we just drew
         window.display();
 
-        // drawScene();
+        /* drawScene(
+            window,
+            paused,
+            spriteBackground,
+            spriteCloud1,
+            spriteCloud2,
+            spriteCloud3,
+            spriteTree,
+            spriteBee,
+            timebar,
+            scoreText,
+            messageText); */
 
     }
     
