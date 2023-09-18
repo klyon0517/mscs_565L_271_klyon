@@ -409,7 +409,7 @@ int main() {
             }
             else {
 
-                // Move the bee
+                // Move cloud1
                 spriteCloud1.setPosition(
                     spriteCloud1.getPosition().x +
                     (cloud1Speed * dt.asSeconds()),
