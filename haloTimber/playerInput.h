@@ -5,7 +5,7 @@ using namespace sf;
 #define PLAYERINPUT_H_
 
 void playerInput(
-    RenderWindow& window,
-    bool& paused);
+    RenderWindow&,
+    bool&);
 
 #endif

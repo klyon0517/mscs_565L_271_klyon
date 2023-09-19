@@ -5,11 +5,11 @@ using namespace sf;
 #define UPDATESCENE_H_
 
 void updateScene(
-    Clock& clock,
-    bool& paused,
-    bool& bansheeActive,
-    float& bansheeSpeed,
-    Sprite (&spriteBanshees)[3]);
+    Clock&,
+    bool&,
+    bool&,
+    float&,
+    Sprite [3]);
 
 #endif
 

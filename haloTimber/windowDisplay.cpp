@@ -6,7 +6,7 @@ void windowDisplay(
     Sprite& spriteBackground,
     Text& messageText,
     Sprite& spriteGruntLine,
-    Sprite(&spriteBanshees)[3]) {
+    Sprite spriteBanshees[3]) {
 
     window.clear();
 

@@ -5,7 +5,7 @@ void updateScene(
     bool& paused,
     bool& bansheeActive,
     float& bansheeSpeed,
-    Sprite (&spriteBanshees)[3]) {
+    Sprite spriteBanshees[3]) {
 
     if (!paused) {
 
@@ -18,11 +18,11 @@ void updateScene(
             for (int i = 0; i < 3; i++) {
 
                 // How fast is the Banshee
-                srand((int)time(0));
+                // srand((int)time(0));
                 bansheeSpeed = rand() % 250 + 50;
 
                 // How high is the Banshee
-                srand((int)time(0) * 10);
+                // srand((int)time(0) * 10);
                 float height = rand() % 300 + 100;
                 spriteBanshees[i].setPosition(2000, height);
 
