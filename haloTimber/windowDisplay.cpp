@@ -6,12 +6,18 @@ void windowDisplay(
     Sprite& spriteBackground,
     Text& messageText,
     Sprite& spriteGruntLine,
-    Sprite& spriteBanshee) {
+    Sprite(&spriteBanshees)[3]) {
 
     window.clear();
 
     window.draw(spriteBackground);
-    window.draw(spriteBanshee);
+
+    for (int i = 0; i < 3; i++) {
+
+        window.draw(spriteBanshees[i]);
+
+    }
+
     window.draw(spriteGruntLine);
 
     if (paused) {

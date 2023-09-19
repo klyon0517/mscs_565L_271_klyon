@@ -82,10 +82,22 @@ int main() {
     spriteGruntLine.setTexture(textureGruntLine);
     spriteGruntLine.setPosition(500, 500);
 
-    Sprite spriteBanshee;
-    spriteBanshee.setTexture(textureBanshee);
-    spriteBanshee.scale(0.25, 0.25);
-    spriteBanshee.setPosition(-120, 800);
+    Sprite spriteBanshees[3];
+    srand(time(0));
+
+    for (int i = 0; i < 3; i++) {
+
+        float randomScale = ((float)rand()) / (RAND_MAX / (0.35 - 0.15));
+        //float randomScale = ((float)(rand() % 100000000) + 1) / 100000001;
+        randomScale = roundf(randomScale * 100) / 100;
+
+        int height = rand() % 200 + 200;
+
+        spriteBanshees[i].setTexture(textureBanshee);
+        spriteBanshees[i].scale(randomScale, randomScale);
+        spriteBanshees[i].setPosition(-120, height);
+
+    }
 
 
 
@@ -100,7 +112,7 @@ int main() {
             paused,
             bansheeActive,
             bansheeSpeed,
-            spriteBanshee);
+            spriteBanshees);
 
         windowDisplay(
             window,
@@ -108,7 +120,7 @@ int main() {
             spriteBackground,
             messageText,
             spriteGruntLine,
-            spriteBanshee);
+            spriteBanshees);
                
     }
 

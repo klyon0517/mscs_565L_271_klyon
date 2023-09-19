@@ -10,6 +10,6 @@ void windowDisplay(
     Sprite& spriteBackground,
     Text& messageText,
     Sprite& spriteGruntLine,
-    Sprite& spriteBanshee);
+    Sprite (&spriteBanshees)[3]);
 
 #endif

@@ -9,7 +9,7 @@ void updateScene(
     bool& paused,
     bool& bansheeActive,
     float& bansheeSpeed,
-    Sprite& spriteBanshee);
+    Sprite (&spriteBanshees)[3]);
 
 #endif
 
