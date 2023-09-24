@@ -16,6 +16,9 @@
 */
 
 #include "Bat.h"
+#include "PlayerInput.h"
+#include "UpdateScene.h"
+#include "DrawWindow.h"
 #include <sstream>
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
@@ -40,12 +43,23 @@ int main() {
 
     while (window.isOpen()) {
 
-        // Player Input
+        playerInput(
+            window,
+            bat);
 
         // Update Scene
+        updateScene(
+            clock,
+            bat,
+            score,
+            lives,
+            hud);
 
         // Draw Window
-
+        drawWindow(
+            window,
+            bat,
+            hud);
     }
 
     return 0;

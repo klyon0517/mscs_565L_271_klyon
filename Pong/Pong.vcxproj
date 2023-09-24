@@ -128,7 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bat.cpp" />
+    <ClCompile Include="DrawWindow.cpp" />
+    <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="Pong.cpp" />
+    <ClCompile Include="UpdateScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bat.h" />
+    <ClInclude Include="DrawWindow.h" />
+    <ClInclude Include="PlayerInput.h" />
+    <ClInclude Include="UpdateScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
