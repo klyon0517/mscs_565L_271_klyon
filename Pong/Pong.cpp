@@ -16,6 +16,7 @@
 */
 
 #include "Bat.h"
+#include "Ball.h"
 #include "PlayerInput.h"
 #include "UpdateScene.h"
 #include "DrawWindow.h"
@@ -31,6 +32,7 @@ int main() {
     int lives = 3;
 
     Bat bat(1920 / 2, 1080 - 20);
+    Ball ball(1920 / 2, 0);
 
     Text hud;
     Font font;
@@ -51,6 +53,7 @@ int main() {
         updateScene(
             clock,
             bat,
+            ball,
             score,
             lives,
             hud);
@@ -59,6 +62,7 @@ int main() {
         drawWindow(
             window,
             bat,
+            ball,
             hud);
     }
 

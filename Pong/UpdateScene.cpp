@@ -4,6 +4,7 @@
 void updateScene(
     Clock& clock,
     Bat& bat,
+    Ball& ball,
     int& score,
     int& lives,
     Text& hud) {
@@ -11,6 +12,7 @@ void updateScene(
     // Measure time
     Time dt = clock.restart();
     bat.update(dt);
+    ball.update(dt);
 
     // Update HUD
     std::stringstream ss;
