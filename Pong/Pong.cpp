@@ -20,7 +20,6 @@
 #include "PlayerInput.h"
 #include "UpdateScene.h"
 #include "DrawWindow.h"
-#include <sstream>
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
 
@@ -51,6 +50,7 @@ int main() {
 
         // Update Scene
         updateScene(
+            window,
             clock,
             bat,
             ball,
