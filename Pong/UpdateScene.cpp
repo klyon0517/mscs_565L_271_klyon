@@ -1,4 +1,5 @@
 #include "UpdateScene.h"
+#include <iostream>
 
 void updateScene(
     RenderWindow& window,
@@ -46,6 +47,8 @@ void updateScene(
 
         ball.reboundBatOrTop();
 
+        std::cout << "top bounce \n\n";
+
         // Add a score point
         score++;
 
@@ -57,6 +60,8 @@ void updateScene(
 
         ball.reboundSides();
 
+        std::cout << "side bounce \n\n";
+
     }
 
     // Ball hitting the bat
@@ -64,6 +69,8 @@ void updateScene(
 
         // hit detected reverse the ball
         ball.reboundBatOrTop();
+
+        std::cout << "bat bounce \n\n";
 
         // Add a score point
         // score++;

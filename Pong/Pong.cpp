@@ -25,8 +25,15 @@
 
 int main() {
 
-    VideoMode vm(1920, 1080);
-    RenderWindow window(vm, "Pong", Style::Fullscreen);
+    // VideoMode vm(1920, 1080);
+    // RenderWindow window(vm, "Pong", Style::Fullscreen);
+    Vector2f resolution;
+    resolution.x = VideoMode::getDesktopMode().width;
+    resolution.y = VideoMode::getDesktopMode().height;
+    RenderWindow window(VideoMode(resolution.x, resolution.y), "Pong", Style::Fullscreen);
+    View mainView(sf::FloatRect(0, 0, resolution.x, resolution.y));
+    View hudView(sf::FloatRect(0, 0, resolution.x, resolution.y));
+
     int score = 0;
     int lives = 3;
 
@@ -63,6 +70,8 @@ int main() {
             window,
             bat,
             ball,
+            mainView,
+            hudView,
             hud);
     }
 

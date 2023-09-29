@@ -9,4 +9,6 @@ void drawWindow(
     RenderWindow&,
     Bat&,
     Ball&,
+    View&,
+    View&,
     Text&);

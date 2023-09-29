@@ -12,7 +12,7 @@ Bat::Bat(float startX, float startY) {
 
 FloatRect Bat::getPosition() {
 
-    return m_Shape.getLocalBounds();
+    return m_Shape.getGlobalBounds();
 
 }
 
