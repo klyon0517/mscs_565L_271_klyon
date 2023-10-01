@@ -6,4 +6,5 @@
 void renderWindow(
     GLFWwindow*,
     unsigned int&,
+    unsigned int&,
     unsigned int&);
