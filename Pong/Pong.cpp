@@ -1,4 +1,4 @@
-/*  Timber
+/*  Pong
 
     * Course: Game Design & Programming I
     * Type: Independent Study
