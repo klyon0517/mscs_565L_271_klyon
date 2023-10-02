@@ -1,11 +1,12 @@
 #include "Bat.h"
+using namespace sf;
 
 Bat::Bat(float startX, float startY) {
 
     m_Position.x = startX;
     m_Position.y = startY;
 
-    m_Shape.setSize(sf::Vector2f(100, 5));
+    m_Shape.setSize(Vector2f(100, 5));
     m_Shape.setPosition(m_Position);
 
 }
