@@ -15,6 +15,7 @@
 
 */
 
+#include "Player.h"
 #include <iostream>
 
 int main()
