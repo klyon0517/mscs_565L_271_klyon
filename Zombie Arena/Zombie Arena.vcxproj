@@ -128,11 +128,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DrawScene.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerInput.cpp" />
+    <ClCompile Include="UpdateFrame.cpp" />
     <ClCompile Include="Zombie Arena.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DrawScene.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerInput.h" />
+    <ClInclude Include="UpdateFrame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
