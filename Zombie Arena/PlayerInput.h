@@ -10,5 +10,6 @@ void playerInput
     sf::Clock&,
     Player&,
     sf::IntRect&,
-    sf::Vector2f&
+    sf::Vector2f&,
+    sf::VertexArray&
 );

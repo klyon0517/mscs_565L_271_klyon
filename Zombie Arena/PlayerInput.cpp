@@ -1,4 +1,5 @@
 #include "PlayerInput.h"
+#include "ZombieArena.h"
 using namespace sf;
 
 void playerInput
@@ -8,7 +9,8 @@ void playerInput
     Clock& clock,
     Player& player,
     IntRect& arena,
-    Vector2f& resolution
+    Vector2f& resolution,
+    VertexArray& background
 )
 {   
     // Handle events by polling
@@ -133,7 +135,13 @@ void playerInput
             arena.left = 0;
             arena.top = 0;
 
-            int tileSize = 50;
+            // Pass the VA by reference
+            int tileSize =
+                createBackground(background, arena);
+
+            // Don't need this anymore bc it's returned
+            // from createBackground
+            // int tileSize = 50;
 
             // Spawn the player in the middle of the arena
             player.spawn(arena, resolution, tileSize);

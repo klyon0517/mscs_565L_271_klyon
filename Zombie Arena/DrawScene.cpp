@@ -6,7 +6,9 @@ void drawScene
     RenderWindow& window,
     View& mainView,
     State& state,
-    Player& player
+    Player& player,
+    VertexArray& background,
+    Texture& textureBackground
 )
 {
     if (state == State::PLAYING)
@@ -15,6 +17,9 @@ void drawScene
 
         // set the mainView to be displayed in the window
         window.setView(mainView);
+
+        // Draw the background
+        window.draw(background, &textureBackground);
         
         // Draw the player
         window.draw(player.getSprite());

@@ -8,5 +8,7 @@ void drawScene
     sf::RenderWindow&,
     sf::View&,
     State&,
-    Player&
+    Player&,
+    sf::VertexArray&,
+    sf::Texture&
 );

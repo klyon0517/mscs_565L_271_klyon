@@ -20,6 +20,7 @@
 #include "Player.h"
 #include "PlayerInput.h"
 #include "UpdateFrame.h"
+#include "ZombieArena.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -59,6 +60,13 @@ int main()
     // Arena boundaries
     IntRect arena;
 
+    // Create the background
+    VertexArray background;
+
+    // Load the background textures
+    Texture textureBackground;
+    textureBackground.loadFromFile("graphics/background_sheet.png");
+
     // Main game loop
     while (window.isOpen())
     {
@@ -70,7 +78,8 @@ int main()
             clock,
             player,
             arena,
-            resolution
+            resolution,
+            background
         );
 
         ///// Update Frame /////
@@ -92,7 +101,9 @@ int main()
             window,
             mainView,
             state,
-            player
+            player,
+            background,
+            textureBackground
         );
     }
 
