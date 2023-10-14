@@ -19,6 +19,7 @@
 #include "GameState.h"
 #include "Player.h"
 #include "PlayerInput.h"
+#include "TextureHolder.h"
 #include "UpdateFrame.h"
 #include "ZombieArena.h"
 #include <SFML/Graphics.hpp>
