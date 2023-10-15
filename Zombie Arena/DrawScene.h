@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Player.h"
+#include "Zombie.h"
 #include <SFML/Graphics.hpp>
 
 void drawScene
@@ -10,5 +11,7 @@ void drawScene
     State&,
     Player&,
     sf::VertexArray&,
-    sf::Texture&
+    sf::Texture&,
+    int,
+    Zombie*&
 );

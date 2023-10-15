@@ -10,7 +10,9 @@ void updateFrame
     Time& gameTimeTotal,
     Vector2f& mouseWorldPosition,
     Vector2i& mouseScreenPosition,
-    Player& player
+    Player& player,
+    int numZombies,
+    Zombie*& zombies
 )
 {
     if (state == State::PLAYING)
@@ -39,5 +41,15 @@ void updateFrame
 
         // Make the view center around the player
         mainView.setCenter(player.getCenter());
+
+        // Loop through each zombie and update them
+        for (int i = 0; i < numZombies; i++)
+        {
+            if (zombies[i].isAlive())
+            {
+                zombies[i].update(
+                    dt.asSeconds(), playerPosition);
+            }
+        }
     }
 }

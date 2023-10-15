@@ -1,11 +1,9 @@
 #include "ZombieArena.h"
 using namespace sf;
 
-int createBackground
-(
+int createBackground(
     VertexArray& rVA,
-    IntRect& arena
-)
+    IntRect& arena)
 {
     // Anything we do with rVA, we are
     // really doing to the background

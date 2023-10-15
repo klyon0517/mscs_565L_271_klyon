@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Player.h"
+#include "Zombie.h"
 #include <SFML/Graphics.hpp>
 
 void playerInput
@@ -11,5 +12,8 @@ void playerInput
     Player&,
     sf::IntRect&,
     sf::Vector2f&,
-    sf::VertexArray&
+    sf::VertexArray&,
+    int,
+    int,
+    Zombie*&
 );

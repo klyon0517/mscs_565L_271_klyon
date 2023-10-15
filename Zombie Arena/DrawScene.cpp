@@ -8,7 +8,9 @@ void drawScene
     State& state,
     Player& player,
     VertexArray& background,
-    Texture& textureBackground
+    Texture& textureBackground,
+    int numZombies,
+    Zombie*& zombies
 )
 {
     if (state == State::PLAYING)
@@ -21,6 +23,12 @@ void drawScene
         // Draw the background
         window.draw(background, &textureBackground);
         
+        // Draw the zombies
+        for (int i = 0; i < numZombies; i++)
+        {
+            window.draw(zombies[i].getSprite());
+        }
+
         // Draw the player
         window.draw(player.getSprite());
     }

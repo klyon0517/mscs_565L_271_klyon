@@ -10,7 +10,10 @@ void playerInput
     Player& player,
     IntRect& arena,
     Vector2f& resolution,
-    VertexArray& background
+    VertexArray& background,
+    int numZombies,
+    int numZombiesAlive,
+    Zombie*& zombies
 )
 {   
     // Handle events by polling
@@ -145,6 +148,14 @@ void playerInput
 
             // Spawn the player in the middle of the arena
             player.spawn(arena, resolution, tileSize);
+
+            // Create a horde of zombies
+            numZombies = 10;
+
+            // Delete the previously allocated memory if it exists
+            delete[] zombies;
+            zombies = createHorde(numZombies, arena);
+            numZombiesAlive = numZombies;
 
             // Reset the clock so there isn't a frame jump
             clock.restart();

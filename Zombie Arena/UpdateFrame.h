@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Player.h"
+#include "Zombie.h"
 #include <SFML/Graphics.hpp>
 
 void updateFrame
@@ -12,5 +13,7 @@ void updateFrame
     sf::Time&,
     sf::Vector2f&,
     sf::Vector2i&,
-    Player&
+    Player&,
+    int,
+    Zombie*&
 );

@@ -19,13 +19,17 @@
 #include "GameState.h"
 #include "Player.h"
 #include "PlayerInput.h"
+#include "TextureHolder.h"
 #include "UpdateFrame.h"
-#include "ZombieArena.h"
+// #include "ZombieArena.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
 int main()
 {    
+    // Here is the one instance of TextureHolder
+    TextureHolder holder;
+
     // Start with the GAME_OVER state
     State state = State::GAME_OVER;
 
@@ -64,8 +68,15 @@ int main()
     VertexArray background;
 
     // Load the background textures
-    Texture textureBackground;
-    textureBackground.loadFromFile("graphics/background_sheet.png");
+    // Texture textureBackground;
+    // textureBackground.loadFromFile("graphics/background_sheet.png");
+	Texture textureBackground =
+		TextureHolder::GetTexture("graphics/background_sheet.png");
+
+    // Prepare for a horde of zombies
+    int numZombies = 0;
+    int numZombiesAlive = 0;
+    Zombie* zombies = nullptr;
 
     // Main game loop
     while (window.isOpen())
@@ -79,8 +90,165 @@ int main()
             player,
             arena,
             resolution,
-            background
+            background,
+            numZombies,
+            numZombiesAlive,
+			zombies
         );
+
+		/*
+		************
+		Handle input
+		************
+		*/
+
+		// Handle events
+		/* Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == Event::KeyPressed)
+			{
+				// Pause a game while playing
+				if (event.key.code == Keyboard::Return &&
+					state == State::PLAYING)
+				{
+					state = State::PAUSED;
+				}
+
+				// Restart while paused
+				else if (event.key.code == Keyboard::Return &&
+					state == State::PAUSED)
+				{
+					state = State::PLAYING;
+					// Reset the clock so there isn't a frame jump
+					clock.restart();
+				}
+
+				// Start a new game while in GAME_OVER state
+				else if (event.key.code == Keyboard::Return &&
+					state == State::GAME_OVER)
+				{
+					state = State::LEVELING_UP;
+				}
+
+				if (state == State::PLAYING)
+				{
+				}
+
+			}
+		}// End event polling
+
+
+		 // Handle the player quitting
+		if (Keyboard::isKeyPressed(Keyboard::Escape))
+		{
+			window.close();
+		}
+
+		// Handle controls while playing
+		if (state == State::PLAYING)
+		{
+			// Handle the pressing and releasing of the WASD keys
+			if (Keyboard::isKeyPressed(Keyboard::W))
+			{
+				player.moveUp();
+			}
+			else
+			{
+				player.stopUp();
+			}
+
+			if (Keyboard::isKeyPressed(Keyboard::S))
+			{
+				player.moveDown();
+			}
+			else
+			{
+				player.stopDown();
+			}
+
+			if (Keyboard::isKeyPressed(Keyboard::A))
+			{
+				player.moveLeft();
+			}
+			else
+			{
+				player.stopLeft();
+			}
+
+			if (Keyboard::isKeyPressed(Keyboard::D))
+			{
+				player.moveRight();
+			}
+			else
+			{
+				player.stopRight();
+			}
+
+		}// End WASD while playing
+
+		 // Handle the levelling up state
+		if (state == State::LEVELING_UP)
+		{
+			// Handle the player levelling up
+			if (event.key.code == Keyboard::Num1)
+			{
+				state = State::PLAYING;
+			}
+
+			if (event.key.code == Keyboard::Num2)
+			{
+				state = State::PLAYING;
+			}
+
+			if (event.key.code == Keyboard::Num3)
+			{
+				state = State::PLAYING;
+			}
+
+			if (event.key.code == Keyboard::Num4)
+			{
+				state = State::PLAYING;
+			}
+
+			if (event.key.code == Keyboard::Num5)
+			{
+				state = State::PLAYING;
+			}
+
+			if (event.key.code == Keyboard::Num6)
+			{
+				state = State::PLAYING;
+			}
+
+			if (state == State::PLAYING)
+			{
+				// Prepare thelevel
+				// We will modify the next two lines later
+				arena.width = 500;
+				arena.height = 500;
+				arena.left = 0;
+				arena.top = 0;
+
+				// Pass the vertex array by reference
+				// to the createBackground function
+				int tileSize = createBackground(background, arena);
+
+				// Spawn the player in the middle of the arena
+				player.spawn(arena, resolution, tileSize);
+
+				// Create a horde of zombies
+				numZombies = 10;
+
+				// Delete the previously allocated memory (if it exists)
+				delete[] zombies;
+				zombies = createHorde(numZombies, arena);
+				numZombiesAlive = numZombies;
+
+				// Reset the clock so there isn't a frame jump
+				clock.restart();
+			}
+		}// End levelling up */
 
         ///// Update Frame /////
         updateFrame
@@ -92,7 +260,9 @@ int main()
             gameTimeTotal,
             mouseWorldPosition,
             mouseScreenPosition,
-            player
+            player,
+            numZombies,
+            zombies
         );
 
         ///// Draw Scene /////
@@ -103,9 +273,14 @@ int main()
             state,
             player,
             background,
-            textureBackground
+            textureBackground,
+            numZombies,
+            zombies
         );
     }
+
+    // Delete the previously allocated memory if it exists
+    // delete[] zombies;
 
     return 0;
 }
