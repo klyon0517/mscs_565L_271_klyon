@@ -1,4 +1,5 @@
 #include "RenderWindow.h"
+#include <corecrt_math.h>
 
 void renderWindow(
     GLFWwindow* window,
@@ -11,6 +12,14 @@ void renderWindow(
 
     // 5. use our shader program when we want to render an object
     glUseProgram(shaderProgram);
+
+    // update the uniform color
+    float timeValue = glfwGetTime();
+    float greenValue = sin(timeValue) / 2.0f + 0.5f;
+    int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+    glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+
+    // render the triangle
     glBindVertexArray(VAO);
     // glDrawArrays(GL_TRIANGLES, 0, 3);
     // glBindVertexArray(VAO[1]);
