@@ -143,6 +143,11 @@
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="RenderWindow.h" />
+    <ClInclude Include="Shader_s.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shader.fs" />
+    <None Include="shader.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

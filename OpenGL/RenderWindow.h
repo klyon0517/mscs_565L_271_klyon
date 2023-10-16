@@ -2,9 +2,9 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "Shader_s.h"
 
 void renderWindow(
     GLFWwindow*,
-    unsigned int&,
-    unsigned int&,
+    Shader_s&,
     unsigned int&);
