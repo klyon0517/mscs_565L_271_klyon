@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="CreateBackground.cpp" />
     <ClCompile Include="CreateHorde.cpp" />
     <ClCompile Include="DrawScene.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="ZombieArena.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
     <ClInclude Include="DrawScene.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Player.h" />

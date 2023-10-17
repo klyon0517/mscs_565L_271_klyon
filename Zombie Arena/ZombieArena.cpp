@@ -15,13 +15,14 @@
 
 */
 
+#include "Bullet.h"
 #include "DrawScene.h"
 #include "GameState.h"
 #include "Player.h"
-#include "PlayerInput.h"
+// #include "PlayerInput.h"
 #include "TextureHolder.h"
 #include "UpdateFrame.h"
-// #include "ZombieArena.h"
+#include "ZombieArena.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -82,7 +83,7 @@ int main()
     while (window.isOpen())
     {
         ///// Handle Input /////
-        playerInput
+        /* playerInput
         (
             window,
             state,
@@ -94,7 +95,7 @@ int main()
             numZombies,
             numZombiesAlive,
 			zombies
-        );
+        ); */
 
 		/*
 		************
@@ -103,7 +104,7 @@ int main()
 		*/
 
 		// Handle events
-		/* Event event;
+		Event event;
 		while (window.pollEvent(event))
 		{
 			if (event.type == Event::KeyPressed)
@@ -248,7 +249,7 @@ int main()
 				// Reset the clock so there isn't a frame jump
 				clock.restart();
 			}
-		}// End levelling up */
+		}// End levelling up
 
         ///// Update Frame /////
         updateFrame
