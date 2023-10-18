@@ -12,7 +12,9 @@ void updateFrame
     Vector2i& mouseScreenPosition,
     Player& player,
     int numZombies,
-    Zombie*& zombies
+    Zombie*& zombies,
+    Bullet bullets[],
+    Sprite& spriteCrosshair
 )
 {
     if (state == State::PLAYING)
@@ -32,6 +34,9 @@ void updateFrame
         // Convert mouse position to world coordinates of mainView
         mouseWorldPosition =
             window.mapPixelToCoords(Mouse::getPosition(), mainView);
+        
+        // Set the crosshair to the mouse world location
+        spriteCrosshair.setPosition(mouseWorldPosition);
 
         // Update the player
         player.update(dtAsSeconds, Mouse::getPosition());
@@ -49,6 +54,15 @@ void updateFrame
             {
                 zombies[i].update(
                     dt.asSeconds(), playerPosition);
+            }
+        }
+
+        // Update any bullets that are in-flight
+        for (int i = 0; i < 100; i++)
+        {
+            if (bullets[i].isInFlight())
+            {
+                bullets[i].update(dtAsSeconds);
             }
         }
     }

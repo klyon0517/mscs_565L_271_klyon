@@ -79,6 +79,26 @@ int main()
     int numZombiesAlive = 0;
     Zombie* zombies = nullptr;
 
+	// 100 bullets should do
+	Bullet bullets[100];
+	int currentBullet = 0;
+	int bulletsSpare = 24;
+	int bulletsInClip = 6;
+	int clipSize = 6;
+	float fireRate = 1;
+
+	// When was the fire button last pressed?
+	Time lastPressed;
+
+	// Hide the mouse pointer and replace it with a crosshair
+	window.setMouseCursorVisible(true);
+
+	Sprite spriteCrosshair;
+	Texture textureCrosshair =
+		TextureHolder::GetTexture("graphics/crosshair.png");
+	spriteCrosshair.setTexture(textureCrosshair);
+	spriteCrosshair.setOrigin(25, 25);
+
     // Main game loop
     while (window.isOpen())
     {
@@ -86,6 +106,7 @@ int main()
         /* playerInput
         (
             window,
+			gameTimeTotal,
             state,
             clock,
             player,
@@ -94,7 +115,15 @@ int main()
             background,
             numZombies,
             numZombiesAlive,
-			zombies
+			zombies,
+			bullets,
+			currentBullet,
+			bulletsSpare,
+			bulletsInClip,
+			clipSize,
+			fireRate,
+			lastPressed,
+			mouseWorldPosition
         ); */
 
 		/*
@@ -134,8 +163,27 @@ int main()
 
 				if (state == State::PLAYING)
 				{
+					// Reloading
+					if (event.key.code == Keyboard::R)
+					{
+						if (bulletsSpare >= clipSize)
+						{
+							// Plenty of bullets. Reload.
+							bulletsInClip = clipSize;
+							bulletsSpare -= clipSize;
+						}
+						else if (bulletsSpare > 0)
+						{
+							// Only a few bullets left
+							bulletsInClip = bulletsSpare;
+							bulletsSpare = 0;
+						}
+						else
+						{
+							// More later
+						}
+					}
 				}
-
 			}
 		}// End event polling
 
@@ -186,6 +234,31 @@ int main()
 				player.stopRight();
 			}
 
+			// Fire a bullet
+			if (Mouse::isButtonPressed(Mouse::Left))
+			{
+				if (gameTimeTotal.asMilliseconds() -
+					lastPressed.asMilliseconds() >
+					1000 / fireRate && bulletsInClip > 0)
+				{
+					// Pass the center of the player
+					// and the center of the crosshair
+					// to the shoot function
+					bullets[currentBullet].shoot(
+						player.getCenter().x, player.getCenter().y,
+						mouseWorldPosition.x, mouseWorldPosition.y);
+
+					currentBullet++;
+
+					if (currentBullet > 99)
+					{
+						currentBullet = 0;
+					}
+
+					lastPressed = gameTimeTotal;
+					bulletsInClip--;
+				}
+			} // End fire a bullet
 		}// End WASD while playing
 
 		 // Handle the levelling up state
@@ -263,7 +336,9 @@ int main()
             mouseScreenPosition,
             player,
             numZombies,
-            zombies
+            zombies,
+			bullets,
+			spriteCrosshair
         );
 
         ///// Draw Scene /////
@@ -276,7 +351,9 @@ int main()
             background,
             textureBackground,
             numZombies,
-            zombies
+            zombies,
+			bullets,
+			spriteCrosshair
         );
     }
 

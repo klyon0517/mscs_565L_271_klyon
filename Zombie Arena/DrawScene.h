@@ -1,4 +1,5 @@
 #pragma once
+#include "Bullet.h"
 #include "GameState.h"
 #include "Player.h"
 #include "Zombie.h"
@@ -13,5 +14,7 @@ void drawScene
     sf::VertexArray&,
     sf::Texture&,
     int,
-    Zombie*&
+    Zombie*&,
+    Bullet[],
+    sf::Sprite&
 );

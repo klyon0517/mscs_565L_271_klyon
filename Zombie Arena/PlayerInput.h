@@ -1,4 +1,5 @@
 #pragma once
+#include "Bullet.h"
 #include "GameState.h"
 #include "Player.h"
 #include "Zombie.h"
@@ -7,6 +8,7 @@
 void playerInput
 (
     sf::RenderWindow&,
+    sf::Time&,
     State&,
     sf::Clock&,
     Player&,
@@ -15,5 +17,13 @@ void playerInput
     sf::VertexArray&,
     int,
     int,
-    Zombie*&
+    Zombie*&,
+    Bullet [100],
+    int,
+    int,
+    int,
+    int,
+    float,
+    sf::Time&,
+    sf::Vector2f&
 );

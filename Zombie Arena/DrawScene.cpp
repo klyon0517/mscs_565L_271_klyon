@@ -10,7 +10,9 @@ void drawScene
     VertexArray& background,
     Texture& textureBackground,
     int numZombies,
-    Zombie*& zombies
+    Zombie*& zombies,
+    Bullet bullets[],
+    Sprite& spriteCrosshair
 )
 {
     if (state == State::PLAYING)
@@ -29,8 +31,20 @@ void drawScene
             window.draw(zombies[i].getSprite());
         }
 
+        // Draw the bullets
+        for (int i = 0; i < 100; i++)
+        {
+            if (bullets[i].isInFlight())
+            {
+                window.draw(bullets[i].getShape());
+            }
+        }
+
         // Draw the player
         window.draw(player.getSprite());
+
+        // Draw the crosshair
+        window.draw(spriteCrosshair);
     }
 
     if (state == State::LEVELING_UP)

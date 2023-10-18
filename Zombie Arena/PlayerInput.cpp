@@ -5,6 +5,7 @@ using namespace sf;
 void playerInput
 (
     RenderWindow& window,
+    Time& gameTimeTotal,
     State& state,
     Clock& clock,
     Player& player,
@@ -13,7 +14,15 @@ void playerInput
     VertexArray& background,
     int numZombies,
     int numZombiesAlive,
-    Zombie*& zombies
+    Zombie*& zombies,
+    Bullet bullets[100],
+    int currentBullet,
+    int bulletsSpare,
+    int bulletsInClip,
+    int clipSize,
+    float fireRate,
+    Time& lastPressed,
+    Vector2f& mouseWorldPosition
 )
 {   
     // Handle events by polling
@@ -48,7 +57,26 @@ void playerInput
 
             if (state == State::PLAYING)
             {
-
+                // Reloading
+                if (event.key.code == Keyboard::R)
+                {
+                    if (bulletsSpare >= clipSize)
+                    {
+                        // Plenty of bullets. Reload.
+                        bulletsInClip = clipSize;
+                        bulletsSpare -= clipSize;
+                    }
+                    else if (bulletsSpare > 0)
+                    {
+                        // Only a few bullets left
+                        bulletsInClip = bulletsSpare;
+                        bulletsSpare = 0;
+                    }
+                    else
+                    {
+                        // More later
+                    }
+                }
             }
         }
     } // End event polling
@@ -94,6 +122,32 @@ void playerInput
         else {
             player.stopRight();
         }
+
+        // Fire a bullet
+        if (Mouse::isButtonPressed(Mouse::Left))
+        {
+            if (gameTimeTotal.asMilliseconds() -
+                lastPressed.asMilliseconds() >
+                1000 / fireRate && bulletsInClip > 0)
+            {
+                // Pass the center of the player
+                // and the center of the crosshair
+                // to the shoot function
+                bullets[currentBullet].shoot(
+                    player.getCenter().x, player.getCenter().y,
+                    mouseWorldPosition.x, mouseWorldPosition.y);
+
+                currentBullet++;
+
+                if (currentBullet > 99)
+                {
+                    currentBullet = 0;
+                }
+
+                lastPressed = gameTimeTotal;
+                bulletsInClip--;
+            }
+        } // End fire a bullet
     } // End WASD while playing
 
     // Handle the LEVELING_UP state

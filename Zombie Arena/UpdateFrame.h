@@ -1,4 +1,5 @@
 #pragma once
+#include "Bullet.h"
 #include "GameState.h"
 #include "Player.h"
 #include "Zombie.h"
@@ -15,5 +16,7 @@ void updateFrame
     sf::Vector2i&,
     Player&,
     int,
-    Zombie*&
+    Zombie*&,
+    Bullet[],
+    sf::Sprite&
 );
