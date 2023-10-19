@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B7BFB66B-C9BE-35F0-961F-ADED47A70E68}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\GLFW\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/GLFW/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\cmake-3.27.6-windows-x86_64\bin\cmake.exe -SC:/GLFW -BC:/GLFW/build --check-stamp-file C:/GLFW/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GLFW\build\CMakeFiles\3.27.6\CMakeCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeRCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeSystem.cmake;C:\GLFW\cmake_uninstall.cmake.in;C:\GLFW\src\glfw3.pc.in;C:\GLFW\src\glfw3Config.cmake.in;C:\GLFW\src\glfw_config.h.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakePackageConfigHelpers.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckIncludeFile.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindDoxygen.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindThreads.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\GNUInstallDirs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GLFW\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/GLFW/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\cmake-3.27.6-windows-x86_64\bin\cmake.exe -SC:/GLFW -BC:/GLFW/build --check-stamp-file C:/GLFW/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GLFW\build\CMakeFiles\3.27.6\CMakeCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeRCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeSystem.cmake;C:\GLFW\cmake_uninstall.cmake.in;C:\GLFW\src\glfw3.pc.in;C:\GLFW\src\glfw3Config.cmake.in;C:\GLFW\src\glfw_config.h.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakePackageConfigHelpers.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckIncludeFile.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindDoxygen.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindThreads.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\GNUInstallDirs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GLFW\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/GLFW/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\cmake-3.27.6-windows-x86_64\bin\cmake.exe -SC:/GLFW -BC:/GLFW/build --check-stamp-file C:/GLFW/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GLFW\build\CMakeFiles\3.27.6\CMakeCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeRCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeSystem.cmake;C:\GLFW\cmake_uninstall.cmake.in;C:\GLFW\src\glfw3.pc.in;C:\GLFW\src\glfw3Config.cmake.in;C:\GLFW\src\glfw_config.h.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakePackageConfigHelpers.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckIncludeFile.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindDoxygen.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindThreads.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\GNUInstallDirs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GLFW\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/GLFW/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\cmake-3.27.6-windows-x86_64\bin\cmake.exe -SC:/GLFW -BC:/GLFW/build --check-stamp-file C:/GLFW/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GLFW\build\CMakeFiles\3.27.6\CMakeCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeRCCompiler.cmake;C:\GLFW\build\CMakeFiles\3.27.6\CMakeSystem.cmake;C:\GLFW\cmake_uninstall.cmake.in;C:\GLFW\src\glfw3.pc.in;C:\GLFW\src\glfw3Config.cmake.in;C:\GLFW\src\glfw_config.h.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeCommonLanguageInclude.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeDependentOption.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeGenericSystem.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeInitializeConfigs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeLanguageInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakePackageConfigHelpers.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeRCInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInformation.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CMakeSystemSpecificInitialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckIncludeFile.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\CheckLibraryExists.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Compiler\MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindDoxygen.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindPackageMessage.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\FindThreads.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\GNUInstallDirs.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Internal\CheckSourceCompiles.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-Initialize.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC-C.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows-MSVC.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\Windows.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\Platform\WindowsPaths.cmake;C:\cmake-3.27.6-windows-x86_64\share\cmake-3.27\Modules\WriteBasicConfigVersionFile.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GLFW\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\GLFW\build\ZERO_CHECK.vcxproj">
+      <Project>{DEE4D28C-5469-35A0-899F-882F421BC983}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\boing.vcxproj">
+      <Project>{473B4856-45B4-3061-927E-3C7070228BE5}</Project>
+      <Name>boing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\clipboard.vcxproj">
+      <Project>{5D457697-D829-314E-9B6D-2B28F99F4770}</Project>
+      <Name>clipboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\cursor.vcxproj">
+      <Project>{DE22B9E5-E42D-3DF5-A0C5-04364A34BAEA}</Project>
+      <Name>cursor</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\empty.vcxproj">
+      <Project>{9F5B2FD8-3A37-3908-8CE4-2A5600981030}</Project>
+      <Name>empty</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\events.vcxproj">
+      <Project>{FAD5FAEA-E37B-3C12-850F-35F37925174A}</Project>
+      <Name>events</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\gamma.vcxproj">
+      <Project>{FCB6EB27-B874-37CE-A12D-B98CCA82E74E}</Project>
+      <Name>gamma</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\gears.vcxproj">
+      <Project>{F092353F-5D1D-3253-8ECC-5F6D0A2FA511}</Project>
+      <Name>gears</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\src\glfw.vcxproj">
+      <Project>{62253DF4-5FB0-3892-B834-60BF6FEE3D19}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\glfwinfo.vcxproj">
+      <Project>{7C3F1E6B-09F9-31AA-8594-FC40DF3DB814}</Project>
+      <Name>glfwinfo</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\heightmap.vcxproj">
+      <Project>{CAAF136E-618E-3A9C-84A4-51C33ED5755B}</Project>
+      <Name>heightmap</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\icon.vcxproj">
+      <Project>{265B5423-B2B9-3436-BBFA-56C2C734AF5E}</Project>
+      <Name>icon</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\iconify.vcxproj">
+      <Project>{26ACED75-467C-3CA2-A86B-1154081FA98A}</Project>
+      <Name>iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\inputlag.vcxproj">
+      <Project>{C4342CEE-C8B9-3C3F-A0A2-6969A5216090}</Project>
+      <Name>inputlag</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\joysticks.vcxproj">
+      <Project>{0AFF8999-2FD1-3147-ACBA-54ED8C808860}</Project>
+      <Name>joysticks</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\monitors.vcxproj">
+      <Project>{DBEF3ECA-5A6A-343E-B130-712CC65579DC}</Project>
+      <Name>monitors</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\msaa.vcxproj">
+      <Project>{85DA1F12-7F42-3873-A7A2-53A6B160CB01}</Project>
+      <Name>msaa</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\offscreen.vcxproj">
+      <Project>{B5213290-8548-341E-BE02-BCF4D1589AA3}</Project>
+      <Name>offscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\opacity.vcxproj">
+      <Project>{CDC047CB-8AD9-34B1-B6D9-2EF11C1FE409}</Project>
+      <Name>opacity</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\particles.vcxproj">
+      <Project>{A99BCF03-5D27-37E0-B06D-13477BDE0F33}</Project>
+      <Name>particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\reopen.vcxproj">
+      <Project>{6CBCE09D-BD3C-347C-AA25-DF163738C2E3}</Project>
+      <Name>reopen</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\sharing.vcxproj">
+      <Project>{71439A82-E610-38EE-ADC2-02CFE77709E2}</Project>
+      <Name>sharing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\simple.vcxproj">
+      <Project>{5E73D790-2267-3924-B35A-737899D39914}</Project>
+      <Name>simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\splitview.vcxproj">
+      <Project>{55E5C452-1EDB-38A2-A8BD-3866823F88C4}</Project>
+      <Name>splitview</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\tearing.vcxproj">
+      <Project>{637B2D4C-AD2B-3C02-8F08-3941517C6100}</Project>
+      <Name>tearing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\threads.vcxproj">
+      <Project>{96EBB79C-6F31-3782-BB4D-6DD935E39066}</Project>
+      <Name>threads</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\timeout.vcxproj">
+      <Project>{8D561EC2-AF96-3128-AA4E-863F47BEF498}</Project>
+      <Name>timeout</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\title.vcxproj">
+      <Project>{F168632A-DF73-31FB-88C6-4F34F553FC2B}</Project>
+      <Name>title</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\triangle-vulkan.vcxproj">
+      <Project>{FDCD5118-33DF-3EC9-918C-6990853EF09C}</Project>
+      <Name>triangle-vulkan</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\examples\wave.vcxproj">
+      <Project>{38547F73-FA35-3733-BA43-CA5491DC1812}</Project>
+      <Name>wave</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\GLFW\build\tests\windows.vcxproj">
+      <Project>{E3B97E92-BA18-3E5C-916D-925D1E47DDBD}</Project>
+      <Name>windows</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
