@@ -18,6 +18,7 @@
 #include "Bullet.h"
 #include "DrawScene.h"
 #include "GameState.h"
+#include "Pickup.h"
 #include "Player.h"
 // #include "PlayerInput.h"
 #include "TextureHolder.h"
