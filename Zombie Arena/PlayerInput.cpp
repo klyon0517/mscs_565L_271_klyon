@@ -22,7 +22,9 @@ void playerInput
     int clipSize,
     float fireRate,
     Time& lastPressed,
-    Vector2f& mouseWorldPosition
+    Vector2f& mouseWorldPosition,
+    Pickup& healthPickup,
+    Pickup& ammoPickup
 )
 {   
     // Handle events by polling
@@ -203,6 +205,10 @@ void playerInput
             // Spawn the player in the middle of the arena
             player.spawn(arena, resolution, tileSize);
 
+            // Configure the pickups
+            healthPickup.setArena(arena);
+            ammoPickup.setArena(arena);
+            
             // Create a horde of zombies
             numZombies = 10;
 

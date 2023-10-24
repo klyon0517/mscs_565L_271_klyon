@@ -12,7 +12,9 @@ void drawScene
     int numZombies,
     Zombie*& zombies,
     Bullet bullets[],
-    Sprite& spriteCrosshair
+    Sprite& spriteCrosshair,
+    Pickup& healthPickup,
+    Pickup& ammoPickup
 )
 {
     if (state == State::PLAYING)
@@ -42,6 +44,17 @@ void drawScene
 
         // Draw the player
         window.draw(player.getSprite());
+
+        // Draw the pickups, if currently spawned
+        if (ammoPickup.isSpawned())
+        {
+            window.draw(ammoPickup.getSprite());
+        }
+
+        if (healthPickup.isSpawned())
+        {
+            window.draw(healthPickup.getSprite());
+        }
 
         // Draw the crosshair
         window.draw(spriteCrosshair);

@@ -14,7 +14,9 @@ void updateFrame
     int numZombies,
     Zombie*& zombies,
     Bullet bullets[],
-    Sprite& spriteCrosshair
+    Sprite& spriteCrosshair,
+    Pickup& healthPickup,
+    Pickup& ammoPickup
 )
 {
     if (state == State::PLAYING)
@@ -65,5 +67,9 @@ void updateFrame
                 bullets[i].update(dtAsSeconds);
             }
         }
+
+        // Update the pickups
+        healthPickup.update(dtAsSeconds);
+        ammoPickup.update(dtAsSeconds);
     }
 }

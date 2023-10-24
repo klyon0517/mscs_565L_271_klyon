@@ -100,6 +100,10 @@ int main()
 	spriteCrosshair.setTexture(textureCrosshair);
 	spriteCrosshair.setOrigin(25, 25);
 
+	// Create a couple of pickups
+	Pickup healthPickup(1);
+	Pickup ammoPickup(2);
+
     // Main game loop
     while (window.isOpen())
     {
@@ -124,7 +128,9 @@ int main()
 			clipSize,
 			fireRate,
 			lastPressed,
-			mouseWorldPosition
+			mouseWorldPosition,
+			healthPickup,
+			ammoPickup
         ); */
 
 		/*
@@ -312,6 +318,10 @@ int main()
 				// Spawn the player in the middle of the arena
 				player.spawn(arena, resolution, tileSize);
 
+				// Configure the pickups
+				healthPickup.setArena(arena);
+				ammoPickup.setArena(arena);
+
 				// Create a horde of zombies
 				numZombies = 10;
 
@@ -339,7 +349,9 @@ int main()
             numZombies,
             zombies,
 			bullets,
-			spriteCrosshair
+			spriteCrosshair,
+			healthPickup,
+			ammoPickup
         );
 
         ///// Draw Scene /////
@@ -354,7 +366,9 @@ int main()
             numZombies,
             zombies,
 			bullets,
-			spriteCrosshair
+			spriteCrosshair,
+			healthPickup,
+			ammoPickup
         );
     }
 

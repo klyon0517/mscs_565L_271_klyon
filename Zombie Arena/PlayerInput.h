@@ -1,6 +1,7 @@
 #pragma once
 #include "Bullet.h"
 #include "GameState.h"
+#include "Pickup.h"
 #include "Player.h"
 #include "Zombie.h"
 #include <SFML/Graphics.hpp>
@@ -25,5 +26,7 @@ void playerInput
     int,
     float,
     sf::Time&,
-    sf::Vector2f&
+    sf::Vector2f&,
+    Pickup&,
+    Pickup&
 );

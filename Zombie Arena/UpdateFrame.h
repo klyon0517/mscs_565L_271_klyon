@@ -1,6 +1,7 @@
 #pragma once
 #include "Bullet.h"
 #include "GameState.h"
+#include "Pickup.h"
 #include "Player.h"
 #include "Zombie.h"
 #include <SFML/Graphics.hpp>
@@ -18,5 +19,7 @@ void updateFrame
     int,
     Zombie*&,
     Bullet[],
-    sf::Sprite&
+    sf::Sprite&,
+    Pickup&,
+    Pickup&
 );
