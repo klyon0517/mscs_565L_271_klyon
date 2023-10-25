@@ -21,5 +21,9 @@ void updateFrame
     Bullet[],
     sf::Sprite&,
     Pickup&,
-    Pickup&
+    Pickup&,
+    int&,
+    int&,
+    int&,
+    int&
 );

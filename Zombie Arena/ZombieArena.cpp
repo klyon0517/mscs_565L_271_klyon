@@ -104,6 +104,10 @@ int main()
 	Pickup healthPickup(1);
 	Pickup ammoPickup(2);
 
+	// About the game
+	int score = 0;
+	int hiScore = 0;
+
     // Main game loop
     while (window.isOpen())
     {
@@ -351,7 +355,11 @@ int main()
 			bullets,
 			spriteCrosshair,
 			healthPickup,
-			ammoPickup
+			ammoPickup,
+			score,
+			hiScore,
+			numZombiesAlive,
+			bulletsSpare
         );
 
         ///// Draw Scene /////
@@ -373,7 +381,7 @@ int main()
     }
 
     // Delete the previously allocated memory if it exists
-    // delete[] zombies;
+    delete[] zombies;
 
     return 0;
 }
