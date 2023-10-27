@@ -21,6 +21,7 @@
 #include "Pickup.h"
 #include "Player.h"
 // #include "PlayerInput.h"
+#include <sstream>
 #include "TextureHolder.h"
 #include "UpdateFrame.h"
 #include "ZombieArena.h"
@@ -107,6 +108,46 @@ int main()
 	// About the game
 	int score = 0;
 	int hiScore = 0;
+
+	// For the home / game over screen
+	Sprite spriteGameOver;
+	Texture textureGameOver =
+		TextureHolder::GetTexture("graphics/background.png");
+	spriteGameOver.setTexture(textureGameOver);
+	spriteGameOver.setPosition(0, 0);
+
+	// Create a view for the HUD
+	View hudView(FloatRect(0, 0, resolution.x, resolution.y));
+
+	// Create a sprite for the ammo icon
+	Sprite spriteAmmoIcon;
+	Texture	textureAmmoIcon =
+		TextureHolder::GetTexture("graphics/ammo_icon.png");
+	spriteAmmoIcon.setTexture(textureAmmoIcon);
+	spriteAmmoIcon.setPosition(20, 980);
+
+	// Load the font
+	Font font;
+	font.loadFromFile("fonts/zombiecontrol.ttf");
+
+	// Paused
+	Text pausedText;
+	pausedText.setFont(font);
+	pausedText.setCharacterSize(155);
+	pausedText.setFillColor(Color::White);
+	pausedText.setPosition(400, 400);
+	pausedText.setString("Press Enter \nto continue");
+
+	// Game over
+	Text gameOverText;
+	gameOverText.setFont(font);
+	gameOverText.setCharacterSize(125);
+	gameOverText.setFillColor(Color::White);
+	gameOverText.setPosition(250, 850);
+	gameOverText.setString("Press Enter to play");
+
+	// Leveling up
+
 
     // Main game loop
     while (window.isOpen())
