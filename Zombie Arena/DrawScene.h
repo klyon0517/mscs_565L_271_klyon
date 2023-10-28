@@ -19,5 +19,17 @@ void drawScene
     Bullet[],
     sf::Sprite&,
     Pickup&,
-    Pickup&
+    Pickup&,
+    sf::View&,
+    sf::Sprite&,
+    sf::Sprite&,
+    sf::RectangleShape&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&
 );

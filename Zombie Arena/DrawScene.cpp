@@ -14,7 +14,19 @@ void drawScene
     Bullet bullets[],
     Sprite& spriteCrosshair,
     Pickup& healthPickup,
-    Pickup& ammoPickup
+    Pickup& ammoPickup,
+    View& hudView,
+    Sprite& spriteAmmoIcon,
+    Sprite& spriteGameOver,
+    RectangleShape& healthBar,
+    Text& ammoText,
+    Text& scoreText,
+    Text& hiScoreText,
+    Text& zombiesRemainingText,
+    Text& waveNumberText,
+    Text& levelUpText,
+    Text& pausedText,
+    Text& gameOverText
 )
 {
     if (state == State::PLAYING)
@@ -58,21 +70,37 @@ void drawScene
 
         // Draw the crosshair
         window.draw(spriteCrosshair);
+
+        // Switch to the HUD view
+        window.setView(hudView);
+
+        // Draw all the HUD elements
+        window.draw(spriteAmmoIcon);
+        window.draw(ammoText);
+        window.draw(scoreText);
+        window.draw(hiScoreText);
+        window.draw(healthBar);
+        window.draw(waveNumberText);
+        window.draw(zombiesRemainingText);
     }
 
     if (state == State::LEVELING_UP)
     {
-
+        window.draw(spriteGameOver);
+        window.draw(levelUpText);
     }
 
     if (state == State::PAUSED)
     {
-
+        window.draw(pausedText);
     }
 
     if (state == State::GAME_OVER)
     {
-
+        window.draw(spriteGameOver);
+        window.draw(gameOverText);
+        window.draw(scoreText);
+        window.draw(hiScoreText);
     }
 
     window.display();

@@ -3,6 +3,7 @@
 #include "GameState.h"
 #include "Pickup.h"
 #include "Player.h"
+#include <sstream>
 #include "Zombie.h"
 #include <SFML/Graphics.hpp>
 
@@ -25,5 +26,15 @@ void updateFrame
     int&,
     int&,
     int&,
-    int&
+    int,
+    int&,
+    int&,
+    sf::RectangleShape&,
+    int&,
+    int&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&,
+    sf::Text&
 );

@@ -147,7 +147,72 @@ int main()
 	gameOverText.setString("Press Enter to play");
 
 	// Leveling up
+	Text levelUpText;
+	levelUpText.setFont(font);
+	levelUpText.setCharacterSize(80);
+	levelUpText.setFillColor(Color::White);
+	levelUpText.setPosition(150, 250);
+	std::stringstream levelUpStream;
+	levelUpStream <<
+		"1 - Increased rate of fire" <<
+		"\n2 - Increased clip size (next reload)" <<
+		"\n3 - Increased max health" <<
+		"\n4 - Increased run speed" <<
+		"\n5 - More and better health pickups" <<
+		"\n6 - More and better ammo pickups";
+	levelUpText.setString(levelUpStream.str());
 
+	// Ammo
+	Text ammoText;
+	ammoText.setFont(font);
+	ammoText.setCharacterSize(55);
+	ammoText.setFillColor(Color::White);
+	ammoText.setPosition(200, 980);
+
+	// Score
+	Text scoreText;
+	scoreText.setFont(font);
+	scoreText.setCharacterSize(55);
+	scoreText.setFillColor(Color::White);
+	scoreText.setPosition(20, 0);
+
+	// HiScore
+	Text hiScoreText;
+	hiScoreText.setFont(font);
+	hiScoreText.setCharacterSize(55);
+	hiScoreText.setFillColor(Color::White);
+	hiScoreText.setPosition(1400, 0);
+	std::stringstream s;
+	s << "High Score: " << hiScore;
+	hiScoreText.setString(s.str());
+
+	// Zombies remaining
+	Text zombiesRemainingText;
+	zombiesRemainingText.setFont(font);
+	zombiesRemainingText.setCharacterSize(55);
+	zombiesRemainingText.setFillColor(Color::White);
+	zombiesRemainingText.setPosition(1500, 980);
+	zombiesRemainingText.setString("Zombies: 100");
+
+	// Wave number
+	int wave = 0;
+	Text waveNumberText;
+	waveNumberText.setFont(font);
+	waveNumberText.setCharacterSize(55);
+	waveNumberText.setFillColor(Color::White);
+	waveNumberText.setPosition(1250, 980);
+	waveNumberText.setString("Wave: 0");
+
+	// Health bar
+	RectangleShape healthBar;
+	healthBar.setFillColor(Color::Red);
+	healthBar.setPosition(450, 980);
+
+	// When did we last update the HUD?
+	int framesSinceLastHUDUpdate = 0;
+
+	// How often (in frames) shoudl we update the HUD
+	int fpsMeasurementFrameInterval = 1000;
 
     // Main game loop
     while (window.isOpen())
@@ -400,7 +465,17 @@ int main()
 			score,
 			hiScore,
 			numZombiesAlive,
-			bulletsSpare
+			bulletsInClip,
+			bulletsSpare,
+			wave,
+			healthBar,
+			framesSinceLastHUDUpdate,
+			fpsMeasurementFrameInterval,
+			ammoText,
+			scoreText,
+			hiScoreText,
+			zombiesRemainingText,
+			waveNumberText
         );
 
         ///// Draw Scene /////
@@ -417,7 +492,19 @@ int main()
 			bullets,
 			spriteCrosshair,
 			healthPickup,
-			ammoPickup
+			ammoPickup,
+			hudView,
+			spriteAmmoIcon,
+			spriteGameOver,
+			healthBar,
+			ammoText,
+			scoreText,
+			hiScoreText,
+			zombiesRemainingText,
+			waveNumberText,
+			levelUpText,
+			pausedText,
+			gameOverText
         );
     }
 
