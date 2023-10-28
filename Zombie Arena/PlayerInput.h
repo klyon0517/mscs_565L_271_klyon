@@ -1,10 +1,11 @@
 #pragma once
+#include <SFML/Audio.hpp>
 #include "Bullet.h"
 #include "GameState.h"
+#include <SFML/Graphics.hpp>
 #include "Pickup.h"
 #include "Player.h"
 #include "Zombie.h"
-#include <SFML/Graphics.hpp>
 
 void playerInput
 (
@@ -28,5 +29,11 @@ void playerInput
     sf::Time&,
     sf::Vector2f&,
     Pickup&,
-    Pickup&
+    Pickup&,
+    int&,
+    sf::Sound,
+    int&,
+    sf::Sound,
+    sf::Sound,
+    sf::Sound
 );

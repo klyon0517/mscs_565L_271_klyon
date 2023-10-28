@@ -1,6 +1,8 @@
 #pragma once
+#include <SFML/Audio.hpp>
 #include "Bullet.h"
 #include "GameState.h"
+#include <fstream>
 #include "Pickup.h"
 #include "Player.h"
 #include <sstream>
@@ -36,5 +38,9 @@ void updateFrame
     sf::Text&,
     sf::Text&,
     sf::Text&,
-    sf::Text&
+    sf::Text&,
+    sf::Sound&,
+    sf::Sound&,
+    sf::Sound&,
+    sf::Sound&
 );

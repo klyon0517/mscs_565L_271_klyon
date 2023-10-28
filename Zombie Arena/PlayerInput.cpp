@@ -24,7 +24,13 @@ void playerInput
     Time& lastPressed,
     Vector2f& mouseWorldPosition,
     Pickup& healthPickup,
-    Pickup& ammoPickup
+    Pickup& ammoPickup,
+    int& wave,
+    Sound& powerup,
+    int& score,
+    Sound& reload,
+    Sound& reloadFailed,
+    Sound& shoot
 )
 {   
     // Handle events by polling
@@ -55,6 +61,18 @@ void playerInput
                 state == State::GAME_OVER)
             {
                 state = State::LEVELING_UP;
+                wave = 0;
+                score = 0;
+
+                // Prepare the gun and ammo for next game
+                currentBullet = 0;
+                bulletsSpare = 24;
+                bulletsInClip = 6;
+                clipSize = 6;
+                fireRate = 1;
+
+                // Reset the player's stats
+                player.resetPlayerStats();
             }
 
             if (state == State::PLAYING)
@@ -67,16 +85,19 @@ void playerInput
                         // Plenty of bullets. Reload.
                         bulletsInClip = clipSize;
                         bulletsSpare -= clipSize;
+                        reload.play();
                     }
                     else if (bulletsSpare > 0)
                     {
                         // Only a few bullets left
                         bulletsInClip = bulletsSpare;
                         bulletsSpare = 0;
+                        reload.play();
                     }
                     else
                     {
                         // More later
+                        reloadFailed.play();
                     }
                 }
             }
@@ -147,6 +168,7 @@ void playerInput
                 }
 
                 lastPressed = gameTimeTotal;
+                shoot.play();
                 bulletsInClip--;
             }
         } // End fire a bullet
@@ -158,39 +180,54 @@ void playerInput
         // Handle the player leveling up
         if (event.key.code == Keyboard::Num1)
         {
+            // Increase fire rate
+            fireRate++;
             state = State::PLAYING;
         }
 
         if (event.key.code == Keyboard::Num2)
         {
+            // Increase clip size
+            clipSize += clipSize;
             state = State::PLAYING;
         }
 
         if (event.key.code == Keyboard::Num3)
         {
+            // Increase health
+            player.upgradeHealth();
             state = State::PLAYING;
         }
 
         if (event.key.code == Keyboard::Num4)
         {
+            // Increase speed
+            player.upgradeSpeed();
             state = State::PLAYING;
         }
 
         if (event.key.code == Keyboard::Num5)
         {
+            // Upgrade health pickup
+            healthPickup.upgrade();
             state = State::PLAYING;
         }
 
         if (event.key.code == Keyboard::Num6)
         {
+            // Upgrade ammo pickup
+            ammoPickup.upgrade();
             state = State::PLAYING;
         }
 
         if (state == State::PLAYING)
         {
+            // Increase the wave number
+            wave++;
+
             // Prepare the level
-            arena.width = 500;
-            arena.height = 500;
+            arena.width = 500 * wave;
+            arena.height = 500 * wave;
             arena.left = 0;
             arena.top = 0;
 
@@ -210,12 +247,15 @@ void playerInput
             ammoPickup.setArena(arena);
             
             // Create a horde of zombies
-            numZombies = 10;
+            numZombies = 5 * wave;
 
             // Delete the previously allocated memory if it exists
             delete[] zombies;
             zombies = createHorde(numZombies, arena);
             numZombiesAlive = numZombies;
+
+            // Play the powerup sound
+            powerup.play();
 
             // Reset the clock so there isn't a frame jump
             clock.restart();

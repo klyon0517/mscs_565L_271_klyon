@@ -30,7 +30,11 @@ void updateFrame
     Text& scoreText,
     Text& hiScoreText,
     Text& zombiesRemainingText,
-    Text& waveNumberText
+    Text& waveNumberText,
+    Sound& hit,
+    Sound& pickup,
+    Sound& reload,
+    Sound& splat
 )
 {
     if (state == State::PLAYING)
@@ -120,6 +124,8 @@ void updateFrame
                                 state = State::LEVELING_UP;
                             }
                         }
+                        // Make a splat sound
+                        splat.play();
                     }
                 }
             }
@@ -134,12 +140,17 @@ void updateFrame
             {
                 if (player.hit(gameTimeTotal))
                 {
-
+                    // more hear later
+                    hit.play();
                 }
 
                 if (player.getHealth() <= 0)
                 {
                     state = State::GAME_OVER;
+
+                    std::ofstream outputFile("gamedata/scores.txt");
+                    outputFile << hiScore;
+                    outputFile.close();
                 }
             }
         } // End player touched
@@ -150,6 +161,8 @@ void updateFrame
             healthPickup.isSpawned())
         {
             player.increaseHealthLevel(healthPickup.gotIt());
+            // Play a sound
+            pickup.play();
         }
 
         // Has the player touched an ammo pickup
@@ -158,6 +171,8 @@ void updateFrame
             ammoPickup.isSpawned())
         {
             bulletsSpare += ammoPickup.gotIt();
+            // Play a sound
+            reload.play();
         }
 
         // Size up the health bar
