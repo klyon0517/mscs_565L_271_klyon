@@ -6,7 +6,7 @@
     * CRN: 13015
     * Instructor: Matthew Johnson
     * Software: Game #3 (Beginning C++ Game Programming, Horton, J.)
-    * Filename: Zombie Arena.cpp
+    * Filename: ZombieArena.cpp
     * Author: Kerry Lyon
     * Created: October 1, 2023
     * Due: October 31, 2023
