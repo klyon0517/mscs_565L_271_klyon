@@ -31,7 +31,7 @@ bool Bob::handleInput()
     else
     {
         m_IsJumping = false;
-        m_IsFalling = false;
+        m_IsFalling = true;
     }
 
     if (Keyboard::isKeyPressed(Keyboard::Left))

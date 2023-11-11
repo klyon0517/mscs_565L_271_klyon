@@ -1,4 +1,5 @@
 #include "PlayableCharacter.h"
+
 using namespace sf;
 
 void PlayableCharacter::spawn(
