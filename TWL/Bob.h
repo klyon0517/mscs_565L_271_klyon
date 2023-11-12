@@ -8,5 +8,5 @@ public:
     Bob();
 
     // The overriden input handler for Thomas
-    bool virtual handleInput();
+    virtual bool handleInput() override;
 };

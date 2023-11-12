@@ -4,6 +4,7 @@
 #include "Bob.h"
 #include "Hud.h"
 #include "LevelManager.h"
+#include "ParticleSystem.h"
 #include "SoundManager.h"
 #include "TextureHolder.h"
 #include "Thomas.h"
@@ -12,6 +13,9 @@ class Engine
 {
 private:
     TextureHolder th;
+
+    // Create the particle system
+    ParticleSystem m_PS;
 
     Thomas m_Thomas;
     Bob m_Bob;
