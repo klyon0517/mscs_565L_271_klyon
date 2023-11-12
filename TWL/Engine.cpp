@@ -22,6 +22,20 @@ Engine::Engine()
     m_BGLeftView.setViewport(FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
     m_BGRightView.setViewport(FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
+    // Can this graphics card use shaders
+    if (!Shader::isAvailable())
+    {
+        // time to get a new PC
+        // Or remove shader code
+        m_Window.close();
+    }
+    else
+    {
+        // Load 2 shaders: vertex / fragment
+        m_RippleShader.loadFromFile(
+            "shaders/vertShader.vert", "shaders/rippleShader.frag");
+    }
+
     m_BackgroundTexture =
         TextureHolder::GetTexture("graphics/background.png");
 
