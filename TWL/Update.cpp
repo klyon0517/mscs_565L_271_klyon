@@ -3,6 +3,7 @@
 #include <sstream>
 
 using namespace sf;
+using namespace std;
 
 void Engine::update(float dtAsSeconds)
 {
@@ -109,4 +110,26 @@ void Engine::update(float dtAsSeconds)
             m_MainView.setCenter(m_Bob.getCenter());
         }
     }
-}
+
+    // Time to update the Hud?
+    // Increment the number of frames since
+    // the last Hud calculation
+    m_FramesSinceLastHUDUpdate++;
+
+    // Update the Hud every m_TargetFramesPerHUDUpdate
+    if (m_FramesSinceLastHUDUpdate > m_TargetFramesPerHUDUpdate)
+    {
+        // Update game Hud text
+        stringstream ssTime;
+        stringstream ssLevel;
+
+        // Update the time text
+        ssTime << (int)m_TimeRemaining;
+        m_Hud.setTime(ssTime.str());
+
+        // Update the level text
+        ssLevel << "Level: " << m_LM.getCurrentLevel();
+        m_Hud.setLevel(ssLevel.str());
+        m_FramesSinceLastHUDUpdate = 0;
+    }
+} // End of update function
