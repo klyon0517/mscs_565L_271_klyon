@@ -38,7 +38,7 @@ void Engine::update(float dtAsSeconds)
             m_NewLevelRequired = true;
 
             // Play the goal sound
-
+            m_SM.playReachGoal();
         }
         else
         {
@@ -65,6 +65,30 @@ void Engine::update(float dtAsSeconds)
             m_NewLevelRequired = true;
         }
     } // End if playing
+
+    // Check if a fire sound needs to be played
+    std::vector<Vector2f>::iterator it;
+
+    // Iterates through the vector of Vector2f objects
+    for (it = m_FireEmitters.begin();
+        it != m_FireEmitters.end(); it++)
+    {
+        // Where is this emitter
+        // Store the location in pos
+        float posX = (*it).x;
+        float posY = (*it).y;
+
+        // Is the emitter near the player?
+        // Make a 500 px rectangle around the emitter
+        FloatRect localRect(posX - 250, posY - 250, 500, 500);
+
+        // Is the player inside localRect?
+        if (m_Thomas.getPosition().intersects(localRect))
+        {
+            // Play the sound and pass in the loc
+            m_SM.playFire(Vector2f(posX, posY), m_Thomas.getCenter());
+        }
+    }
 
     // Set the appropriate view around
     // the appropriate character
