@@ -80,7 +80,7 @@ void Bullet::update(float elapsedTime)
 {
     // Update the bullet position variables
     m_Position.x += m_BulletDistanceX * elapsedTime;
-    m_Position.y += m_BulletDistanceX * elapsedTime;
+    m_Position.y += m_BulletDistanceY * elapsedTime;
 
     // Move the bullet
     m_BulletShape.setPosition(m_Position);
