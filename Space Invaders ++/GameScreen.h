@@ -1,17 +1,24 @@
 #pragma once
+#include "GameInputHandler.h"
+#include "GameOverInputHandler.h"
 #include "Screen.h"
 
-class SelectScreen : public Screen
+class GameScreen : public Screen
 {
 private:
     ScreenManagerRemoteControl* m_ScreenManagerRemoteControl;
+    std::shared_ptr<GameInputHandler> m_GIH;
     sf::Texture m_BackgroundTexture;
     sf::Sprite m_BackgroundSprite;
 
 public:
-    SelectScreen(
+    static bool m_GameOver;
+
+    GameScreen(
         ScreenManagerRemoteControl* smrc,
         sf::Vector2i res
     );
+    void initialise() override;
+    virtual void update(float fps);
     virtual void draw(sf::RenderWindow& window);
 };

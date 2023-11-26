@@ -15,7 +15,7 @@ private:
 
 protected:
     void addPanel(
-        std::unique_ptr<UIPanel> uip,
+        std::unique_ptr<UIPanel> p,
         ScreenManagerRemoteControl* smrc,
         std::shared_ptr<InputHandler> ih
     );

@@ -8,7 +8,7 @@ BitmapStore* BitmapStore::m_s_Instance = nullptr;
 
 BitmapStore::BitmapStore()
 {
-    assert(m_s_Instance);
+    assert(m_s_Instance == nullptr);
     m_s_Instance = this;
 }
 

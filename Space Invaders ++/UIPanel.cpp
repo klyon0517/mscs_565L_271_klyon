@@ -84,7 +84,7 @@ void UIPanel::addButton(
             blue,
             label
         )
-    )
+    );
 }
 
 void UIPanel::draw(RenderWindow& window)

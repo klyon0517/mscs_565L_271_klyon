@@ -40,7 +40,7 @@ void InputHandler::handleInput(
 
         for (auto i = m_Buttons.begin(); i != end; ++i)
         {
-            if ((i*)->m_Collider.contains(
+            if ((*i)->m_Collider.contains(
                 window.mapPixelToCoords(Mouse::getPosition(),
                     (*getPointerToUIView())
                 )))
