@@ -5,25 +5,30 @@
 #include "TransformComponent.h"
 #include "UpdateComponent.h"
 
-class BulletUpdateComponent : public UpdateComponent
+class PlayerUpdateComponent : public UpdateComponent
 {
-    std::string m_SpecificType = "bullet";
+private:
+    std::string m_SpecificType = "player";
     std::shared_ptr<TransformComponent> m_TC;
     std::shared_ptr<RectColliderComponent> m_RCC;
-    float m_Speed = 75.0f;
-
-    int m_AlienBulletSpeedModifier;
-    int m_ModifierRandomComponent = 5;
-    int m_MinimumAdditionalModifier = 5;
-    bool m_MovingUp = true;
+    float m_Speed = 50.0f;
+    float m_XExtent = 0;
+    float y_XExtent = 0;
+    bool m_IsHoldingLeft = false;
+    bool m_IsHoldingRight = false;
+    bool m_IsHoldingUp = false;
+    bool m_IsHoldingDown = false;
 
 public:
-    bool m_BelongsToPlayer = false;
-    bool m_IsSpawned = false;
-    void spawnForPlayer(sf::Vector2f spawnPosition);
-    void spawnForInvader(sf::Vector2f spawnPosition);
-    void deSpawn();
-    bool isMovingUp();
+    void updateShipTravelWithController(float x, float y);
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+    void stopLeft();
+    void stopRight();
+    void stopUp();
+    void stopDown();
 
     // from Component base class
     std::string Component::getSpecificType()
@@ -36,7 +41,6 @@ public:
         GameObject* self
     )
     {
-        // Where is the specific invader
         m_TC = std::static_pointer_cast<TransformComponent>(
             self->getComponentByTypeAndSpecificType(
                 "transform", "transform"
@@ -50,6 +54,6 @@ public:
         );
     }
 
-    // from UpdateComponent
+    // from UpdateComponent class
     void update(float fps) override;
 };
