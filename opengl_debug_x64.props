@@ -5,11 +5,11 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalLibraryDirectories>C:\VS Projects\libraries\SFMLx64\lib;C:\VS Projects\libraries\GLFW\build\src\Debug;C:\VS Projects\libraries\assimp\build\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\VS Projects\lyon-work\libraries\SFMLx64\lib;C:\VS Projects\lyon-work\libraries\GLFW\build\src\Debug;C:\VS Projects\lyon-work\libraries\assimp\build\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;assimp-vc143-mtd.lib;glfw3.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-network-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\VS Projects\libraries\assimp\include;C:\VS Projects\libraries\assimp\build\include;C:\VS Projects\libraries\glad\include;C:\VS Projects\libraries\GLFW\include;C:\VS Projects\libraries\SFMLx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\VS Projects\lyon-work\libraries\assimp\include;C:\VS Projects\lyon-work\libraries\assimp\build\include;C:\VS Projects\lyon-work\libraries\glad\include;C:\VS Projects\lyon-work\libraries\GLFW\include;C:\VS Projects\lyon-work\libraries\SFMLx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />
