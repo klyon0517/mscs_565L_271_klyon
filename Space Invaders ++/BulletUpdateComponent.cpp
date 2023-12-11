@@ -32,7 +32,9 @@ void BulletUpdateComponent::spawnForInvader(
 {
     m_MovingUp = false;
     m_BelongsToPlayer = false;
-    m_IsSpawned = false;
+    m_IsSpawned = true;
+
+    srand((int)time(0));
 
     m_AlienBulletSpeedModifier = (
         ((rand() % m_ModifierRandomComponent)))
@@ -56,7 +58,7 @@ void BulletUpdateComponent::deSpawn()
     m_IsSpawned = false;
 }
 
-void BulletUpdateComponent::isMovingUp()
+bool BulletUpdateComponent::isMovingUp()
 {
     return m_MovingUp;
 }
@@ -87,6 +89,6 @@ void BulletUpdateComponent::update(float fps)
             m_TC->getLocation().y,
             m_TC->getSize().x,
             m_TC->getSize().y
-        )
+        );
     }
 }

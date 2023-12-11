@@ -53,7 +53,7 @@ void InvaderUpdateComponent::update(float fps)
             srand(m_RandSeed);
 
             int mTimeBetweenShots =
-                (((rand() & 10)) + 1) / WorldState::WAVE_NUMBER;
+                (((rand() % 10)) + 1) / WorldState::WAVE_NUMBER;
 
             m_TimeSinceLastShot = 0;
         }

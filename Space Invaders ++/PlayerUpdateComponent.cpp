@@ -73,7 +73,7 @@ void PlayerUpdateComponent::
     updateShipTravelWithController(float x, float y)
 {
     m_XExtent = x;
-    m_XExtent = y;
+    m_YExtent = y;
 }
 
 void PlayerUpdateComponent::moveLeft()

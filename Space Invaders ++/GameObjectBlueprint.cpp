@@ -82,7 +82,7 @@ bool GameObjectBlueprint::getEncompassingRectCollider()
     return m_EncompassingRectCollider;
 }
 
-string GameObjectBlueprint::setEncompassingRectCollider (string label)
+void GameObjectBlueprint::setEncompassingRectCollider (string label)
 {
     m_EncompassingRectCollider = true;
     m_EncompassingRectColliderLabel = "" + label;

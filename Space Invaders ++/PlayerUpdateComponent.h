@@ -13,7 +13,7 @@ private:
     std::shared_ptr<RectColliderComponent> m_RCC;
     float m_Speed = 50.0f;
     float m_XExtent = 0;
-    float y_XExtent = 0;
+    float m_YExtent = 0;
     bool m_IsHoldingLeft = false;
     bool m_IsHoldingRight = false;
     bool m_IsHoldingUp = false;

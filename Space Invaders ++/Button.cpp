@@ -21,7 +21,7 @@ Button::Button(
     float textPaddingX = width / 10;
     float textPaddingY = height / 10;
 
-    m_ButtonText.setCharacterSize(height * .7f);
+    m_ButtonText.setCharacterSize(height * .65f);
     m_ButtonText.setString(text);
     m_Font.loadFromFile("fonts/Roboto-Bold.ttf");
     m_ButtonText.setFont(m_Font);

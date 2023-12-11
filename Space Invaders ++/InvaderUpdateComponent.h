@@ -21,7 +21,7 @@ private:
     float m_TimeSinceLastShot;
     float m_TimeBetweenShots = 5.0f;
     float m_AccuracyModifier;
-    float m_SpeedModifier = 0.05f;
+    float m_SpeedModifier = 0.05;
     int m_RandSeed;
 
 public:
@@ -51,7 +51,7 @@ public:
             )
         );
 
-        m_RCC = std::static_pointer_cast<RectColliderComponent>(
+        m_PlayerRCC = std::static_pointer_cast<RectColliderComponent>(
             gos->findFirstObjectWithTag("Player")
             .getComponentByTypeAndSpecificType(
                 "collider", "rect"
