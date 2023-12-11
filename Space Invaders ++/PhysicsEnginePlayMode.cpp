@@ -38,8 +38,8 @@ void PhysicsEnginePlayMode::detectInvaderCollisions(
                     ) &&
                     (*bulletIt).getTag() == "bullet" &&
                     static_pointer_cast<BulletUpdateComponent>(
-                        (*bulletIt).getFirstUpdateComponent()
-                    )->m_BelongsToPlayer
+                        (*bulletIt).getFirstUpdateComponent())
+                    ->m_BelongsToPlayer
                 )
                 {
                     SoundEngine::playInvaderExplode();
@@ -79,7 +79,7 @@ void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirection(
     {
         if ((*it3).isActive() &&
             (*it3).hasCollider() &&
-            (*it3).getTag() == "Player"
+            (*it3).getTag() != "Player"
         )
         {
             // get a reference to all the parts of the
@@ -141,7 +141,7 @@ void PhysicsEnginePlayMode::detectPlayerCollisionsAndInvaderDirection(
                     else if (currentLocation.x < 0)
                     {
                         // Invader is past left side
-                        if (static_pointer_cast<InvaderUpdateComponent>(
+                        if (!static_pointer_cast<InvaderUpdateComponent>(
                             (*it3).getFirstUpdateComponent())->isMovingRight()
                             )
                         {
